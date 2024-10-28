@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
 # Fstab
-
+ifeq ($(filter %_hanoip,$(TARGET_PRODUCT)),)
 include $(CLEAR_VARS)
 LOCAL_MODULE       := fstab.qcom
 LOCAL_MODULE_TAGS  := optional
@@ -13,6 +13,7 @@ LOCAL_SRC_FILES    := etc/fstab.qcom
 endif
 LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)
 include $(BUILD_PREBUILT)
+endif
 
 # Common config scripts
 

@@ -165,8 +165,12 @@ PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0.vendor
 
 # Common init scripts
+ifeq ($(filter %_hanoip,$(TARGET_PRODUCT)),)
 PRODUCT_PACKAGES += \
-    fstab.qcom \
+    fstab.qcom
+endif
+
+PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.crda.sh \
     init.mdm.sh \
