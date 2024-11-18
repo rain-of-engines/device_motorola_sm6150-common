@@ -40,6 +40,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio_hal.period_size=192 \
     vendor.voice.path.for.pcm.voip=false
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.audio.calfile0=/vendor/etc/acdbdata/Bluetooth_cal.acdb \
+    persist.vendor.audio.calfile1=/vendor/etc/acdbdata/General_cal.acdb \
+    persist.vendor.audio.calfile2=/vendor/etc/acdbdata/Global_cal.acdb \
+    persist.vendor.audio.calfile3=/vendor/etc/acdbdata/Handset_cal.acdb \
+    persist.vendor.audio.calfile4=/vendor/etc/acdbdata/Hdmi_cal.acdb \
+    persist.vendor.audio.calfile5=/vendor/etc/acdbdata/Headset_cal.acdb \
+    persist.vendor.audio.calfile6=/vendor/etc/acdbdata/Speaker_cal.acdb \
+    persist.vendor.audio.calfile7=/vendor/etc/acdbdata/Codec_cal.acdb
+
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     use.voice.path.for.pcm.voip=false
 
@@ -125,7 +135,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.camera.expose.aux=1
+    persist.vendor.camera.expose.aux=1 \
+    persist.vendor.camera.physical.num=5
 
 # Charger
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -143,6 +154,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.crypto.allow_encrypt_override=true \
     ro.crypto.volume.filenames_mode=aes-256-cts
+
+# Cutout
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.support_hide_display_cutout=true
 
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -171,6 +186,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
+# Fingerprint
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.fingerprint=goodix
+
+# Firmware
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.hw.modem_version=.
+
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp
@@ -197,6 +220,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     debug.sf.enable_hwc_vds=1
+
+# HDR
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.display.hdr.config=/vendor/etc/hdr_tm_config.xml
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -305,6 +332,16 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.telephony.default_network=10,10 \
     ro.vendor.use_data_netmgrd=true \
     telephony.lteOnCdmaDevice=1,1
+
+# Sensor
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.hardware.sensors=parker \
+    ro.vendor.sensors.mot_ltv=tru
+
+# SoC
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.soc.manufacturer=Qualcomm \
+    ro.soc.model=SM6150
 
 # SurfaceFlinger
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
